@@ -1,39 +1,57 @@
 import React from 'react';
 import styled from 'styled-components';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
-const StyledCard = styled.div`
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  width: 45%;
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 140,
+  },
+});
 
-  :hover,
-  :focus,
-  :active {
-    color: #0070f3;
-    border-color: #0070f3;
-  }
-
-  h2 {
-    margin: 0 0 1rem 0;
-    font-size: 1.5rem;
-  }
-
-  p {
-    margin: 0;
-    font-size: 1.25rem;
-    line-height: 1.5;
-  }
+const StyledWiki = styled.a`
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 `;
 
-export default function Card () {
+export default function MediaCard({ name, description, life_span: lifespan, wikipedia_url: wikipediaUrl}) {
+  const classes = useStyles();
+
   return (
-    <StyledCard>
-    </StyledCard>
+    <Card className={classes.root}>
+      <CardActionArea>
+        {/* <CardMedia
+          className={classes.media}
+          image="/static/images/cards/contemplative-reptile.jpg"
+          title="Contemplative Reptile"
+        /> */}
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {name}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {description}
+          </Typography>
+          
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {lifespan}
+        </Typography>
+        <StyledWiki href={wikipediaUrl}>
+            Wikipedia
+        </StyledWiki>
+      </CardActions>
+    </Card>
   );
 }
+

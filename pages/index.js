@@ -1,17 +1,28 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Image from 'next/image';
 import {
   Container,
   Main,
   Title,
   Grid,
-  Input,
-  Button,
 } from '../styles/Styles.js';
 import SearchBox from './components/SearchBox.js';
 import Card from './components/Card.js'
 
-export default function Home() {
+
+export async function getStaticProps() {
+  const res = await fetch(`https://api.thecatapi.com/v1/breeds/`)
+  const cats = await res.json()
+
+  return { 
+    props: { 
+      cats 
+    } 
+  }
+}
+
+export default function Home({ cats }) {
   return (
     <Container>
       <Head>
@@ -28,8 +39,12 @@ export default function Home() {
         <SearchBox />
 
         <Grid>
-          <Card>
-          </Card>
+          {cats.map((cat, i) => (
+            <Link href={`/${cat.id}`}  key={i} passHref>
+              <Card {...cat}>
+              </Card>
+            </Link>
+          ))}
         </Grid>
       </Main>
     </Container>

@@ -31,15 +31,6 @@ padding-bottom: 30px;
 line-height: 1.15;
 font-size: 4rem;
 text-align: center;
-  a {
-    color: #0070f3;
-    text-decoration: none;
-  }
-  a:hover,
-  a:focus,
-  a:active {
-    text-decoration: underline;
-  }
 `;
 
 const Grid = styled.div`

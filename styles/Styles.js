@@ -7,13 +7,6 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  @media (max-width: 600px) {
-    .grid {
-      width: 100%;
-      flex-direction: column;
-    }
-  }
 `;
 
 const Main = styled.div`
@@ -21,7 +14,7 @@ padding: 5rem 0;
 flex: 1;
 display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: flex-start;
 align-items: center;
 `;
 
@@ -34,12 +27,14 @@ text-align: center;
 `;
 
 const Grid = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  justify-items: stretch;
   max-width: 800px;
   margin-top: 3rem;
+  grid-gap: 20px;
 `;
 
 

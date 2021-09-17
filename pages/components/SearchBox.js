@@ -19,9 +19,10 @@ const SearchBoxInput = styled.input`
 
 export default function SearchBox ({ onQuery }) {
 
-  const debouncedQuery = useCallback(() =>
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const debouncedQuery = useCallback(
 		debounce(nextValue => onQuery(nextValue), 200),
-		[onQuery]
+		[]
 	);
 
   const onChange = useCallback((event) => {

@@ -36,14 +36,14 @@ export default function MediaCard({ name, id, description, life_span: lifespan, 
     <Card>
       <Link href={`/${id}`} passHref>
         <CardActionArea>
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  {name}
-                </Typography>
-                <Typography  className={classes.description} variant="body2" color="textSecondary" component="p">
-                  {description}
-                </Typography>
-              </CardContent>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                {name}
+              </Typography>
+              <Typography  className={classes.description} variant="body2" color="textSecondary" component="p">
+                {description}
+              </Typography>
+            </CardContent>
         </CardActionArea>
       </Link>
       <CardActions className={classes.actions}>

@@ -39,9 +39,7 @@ export default function Home({ cats }) {
         <Title>
           Welcome to Cat Breeds!
         </Title>
-
         <SearchBox onQuery={setQuery}/>
-
         <Grid>
           {filteredCats.map((cat, i) => (
             <Card {...cat} key={i} />

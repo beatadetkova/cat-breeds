@@ -6,7 +6,6 @@ import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowBackIosOutlinedIcon from '@material-ui/icons/ArrowBackIosOutlined';
-import Link from 'next/link';
 
 export async function getStaticPaths() {
   const res = await fetch('https://api.thecatapi.com/v1/breeds/')
@@ -69,9 +68,7 @@ export default function CatDetailPage ( { cat }) {
         <p><b>Life span:</b> {cat.life_span}</p>
         <Button variant="contained" href={cat.wikipedia_url} target="_blank" rel="noreferrer noopener">Wikipedia</Button>
       </InfoDetails>
-
       {catTraits.map((trait, i) => {
-
         const capitalizedTrait = trait.charAt(0).toUpperCase() + trait.slice(1);
         const traitName = capitalizedTrait.replace(/_/g, ' ');
         return (

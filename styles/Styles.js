@@ -10,20 +10,20 @@ const Container = styled.div`
 `;
 
 const Main = styled.div`
-padding: 5rem 0;
-flex: 1;
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
-align-items: center;
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 const Title = styled.div`
-margin: 0;
-padding-bottom: 30px;
-line-height: 1.15;
-font-size: 4rem;
-text-align: center;
+  margin: 0;
+  padding-bottom: 30px;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
 `;
 
 const Grid = styled.div`
